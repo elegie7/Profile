@@ -3,7 +3,7 @@
   --paper: #f4f6f8;
   --navy: #0d1b2a;
   --red: #e44747;
-  --blue: #dce7ed;
+  --blue: rgb(220, 231, 237);
   --line: rgba(25, 35, 49, 0.18);
   --muted: #64707d;
   --mono: 'DM Mono', monospace;
@@ -94,7 +94,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-o
 .project::before { background: var(--red); border: 5px solid var(--paper); border-radius: 50%; content: ''; height: 13px; left: -10px; position: absolute; top: 35px; width: 13px; }
 .project:hover { background: var(--blue); padding-left: 55px; }
 .project h3 { font-size: clamp(1.3rem, 2.5vw, 2.35rem); letter-spacing: -0.06em; margin: 6px 0 0; }
-.project-period { color: var(--navy); display: block; font-family: var(--mono); font-size: 0.72rem; margin-top: 10px; }
+.project-period { color: var(--navy); display: block; font-family: var(--mono); font-size: 0.82rem; margin-top: 10px; }
 .project-description { color: var(--muted); max-width: 330px; }
 .project-arrow { font-size: 1.8rem; justify-self: end; transition: transform 180ms ease; }
 .project:hover .project-arrow { color: var(--red); transform: translate(4px, -4px); }
@@ -119,6 +119,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-o
 .details { display: grid; gap: 26px; grid-template-columns: repeat(2, 1fr); }
 .detail-item { border-top: 1px solid var(--line); padding-top: 12px; }
 .detail-item p { margin: 9px 0 0; }
+.detail-item small { color: var(--muted); font-family: var(--mono); font-size: 0.68rem; }
+.about .section-label { color: rgb(38, 59, 80); }
+.about .detail-item p { color: rgb(22, 37, 54); }
+.about .detail-item small { color: rgb(63, 82, 101); }
 
 .contact { align-items: end; display: flex; justify-content: space-between; min-height: 380px; }
 .contact h2 { font-size: clamp(3.2rem, 8vw, 8rem); letter-spacing: -0.095em; line-height: 0.83; margin: 22px 0 0; max-width: 720px; }
