@@ -89,13 +89,28 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-o
 .section-heading { align-items: baseline; display: flex; justify-content: space-between; margin-bottom: 48px; }
 .section-heading h2 { color: var(--navy); font-size: clamp(2.25rem, 5vw, 5rem); letter-spacing: -0.075em; line-height: 0.9; margin: 0; }
 .section-count { font-family: var(--mono); font-size: 0.75rem; }
-.projects { border-top: 1px solid var(--line); }
-.project { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 30px; grid-template-columns: 1fr 1.6fr 0.45fr; padding: 25px 0; transition: padding 180ms ease; }
-.project:hover { padding-left: 12px; padding-right: 12px; }
+.projects { border-left: 1px solid var(--line); margin-left: 18px; }
+.project { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 30px; grid-template-columns: minmax(245px, 0.75fr) 1.6fr 0.45fr; padding: 30px 0 30px 45px; position: relative; transition: background 180ms ease, padding 180ms ease; }
+.project::before { background: var(--red); border: 5px solid var(--paper); border-radius: 50%; content: ''; height: 13px; left: -10px; position: absolute; top: 35px; width: 13px; }
+.project:hover { background: var(--blue); padding-left: 55px; }
 .project h3 { font-size: clamp(1.3rem, 2.5vw, 2.35rem); letter-spacing: -0.06em; margin: 6px 0 0; }
+.project-period { color: var(--navy); display: block; font-family: var(--mono); font-size: 0.72rem; margin-top: 10px; }
 .project-description { color: var(--muted); max-width: 330px; }
 .project-arrow { font-size: 1.8rem; justify-self: end; transition: transform 180ms ease; }
 .project:hover .project-arrow { color: var(--red); transform: translate(4px, -4px); }
+
+.career { background: #fff; margin: 0 auto; max-width: 1320px; padding: 100px 5vw; }
+.career-summary { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; gap: 0; grid-template-columns: repeat(3, 1fr); margin-bottom: 55px; }
+.career-summary > div { border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-height: 110px; padding: 20px; }
+.career-summary > div:nth-child(3n) { border-right: 0; }
+.career-summary strong { color: var(--navy); font-size: 1.05rem; font-weight: 600; }
+.career-table-wrap { overflow-x: auto; }
+.career-table { border-collapse: collapse; min-width: 680px; width: 100%; }
+.career-table caption { color: var(--muted); font-family: var(--mono); font-size: 0.68rem; margin-bottom: 14px; text-align: left; text-transform: uppercase; }
+.career-table th { background: var(--navy); color: #fff; font-family: var(--mono); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.04em; padding: 13px 14px; text-align: left; text-transform: uppercase; }
+.career-table td { border-bottom: 1px solid var(--line); font-size: 0.9rem; padding: 13px 14px; }
+.career-table td:nth-child(n+2) { color: var(--muted); font-family: var(--mono); font-size: 0.73rem; white-space: nowrap; }
+.career-table tbody tr:hover { background: var(--blue); }
 
 .about { background: var(--blue); max-width: none; padding-left: max(5vw, calc((100vw - 1320px) / 2 + 5vw)); padding-right: max(5vw, calc((100vw - 1320px) / 2 + 5vw)); }
 .about-grid { display: grid; gap: 8vw; grid-template-columns: 0.6fr 1.4fr; }
@@ -123,12 +138,20 @@ footer { border-top: 1px solid var(--line); display: flex; font-family: var(--mo
   .portrait-wrap { margin: 0 12px 0 24px; width: calc(100% - 24px); }
   .portrait-tag { left: -22px; }
   .work, .about, .contact { padding-bottom: 72px; padding-top: 72px; }
+  .career { padding-bottom: 72px; padding-top: 72px; }
   .section-heading { margin-bottom: 30px; }
   .project { align-items: start; gap: 12px; grid-template-columns: 1fr auto; padding: 20px 0; }
+  .projects { margin-left: 9px; }
+  .project { padding-left: 25px; }
+  .project:hover { padding-left: 32px; }
+  .project::before { left: -10px; top: 25px; }
   .project-description { grid-column: 1 / -1; }
   .project-arrow { grid-column: 2; grid-row: 1; }
   .about-grid { gap: 55px; grid-template-columns: 1fr; }
   .details { gap: 18px; }
+  .career-summary { grid-template-columns: repeat(2, 1fr); margin-bottom: 38px; }
+  .career-summary > div:nth-child(3n) { border-right: 1px solid var(--line); }
+  .career-summary > div:nth-child(2n) { border-right: 0; }
   .contact { align-items: start; display: block; min-height: 0; }
   .contact h2 { font-size: clamp(4.25rem, 18vw, 8rem); margin-bottom: 65px; }
   footer { gap: 10px; }
